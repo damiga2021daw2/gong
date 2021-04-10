@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resouce('ong',ControladorONG::class);
+Route::resource('ong',ControladorONG::class);

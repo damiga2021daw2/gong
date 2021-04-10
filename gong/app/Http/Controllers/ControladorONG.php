@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\ONG;
+use App\Model\ong;
 
 class ControladorONG extends Controller
 {
@@ -14,7 +14,7 @@ class ControladorONG extends Controller
      */
     public function index()
     {
-        $ong = ONG::all();
+        $ong = ong::all();
         return view('index', compact('ong'));
     }
 
@@ -45,7 +45,7 @@ class ControladorONG extends Controller
             'tipus' => 'required|max:255',
             'utpublica' => 'required|max:255',
         ]);
-        $ong = ONG::create($novaOng);
+        $ong = ong::create($novaOng);
 
         return redirect('/ong')->with('completed', 'ONG creada!');
     }
@@ -69,7 +69,7 @@ class ControladorONG extends Controller
      */
     public function edit($id)
     {
-        $ong = ONG::findOrFail($id);
+        $ong = ong::findOrFail($id);
         return view('actualitza', compact('ong'));
     }
 
@@ -92,7 +92,7 @@ class ControladorONG extends Controller
             'utpublica' => 'required|max:255',
         ]);
 
-        ONG::whereId($id)->update($dades);
+        ong::whereId($id)->update($dades);
         return redirect('/ong')->with('completed', 'ONG actualitzada');
     }
 
@@ -104,7 +104,7 @@ class ControladorONG extends Controller
      */
     public function destroy($id)
     {
-        $ong = ONG::findOrFail($id);
+        $ong = ong::findOrFail($id);
         return view('index', compact('ong'));
     }
 }
