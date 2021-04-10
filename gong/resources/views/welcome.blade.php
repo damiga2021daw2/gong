@@ -2,10 +2,10 @@
 
 @section('content')
 
-<h1>Aplicació d'administració d'empleats</h1>
+<h1>Aplicació d'administració d'ONGs</h1>
 <div class="card mt-5">
   <div class="card-header">
-    Afegeix un nou empleat
+    Afegeix una nova ONG
   </div>
 
   <div class="card-body">
@@ -46,7 +46,7 @@
           </div>
           <div class="form-group">
               <label for="utpublica">Utilitat Pública</label>
-              <input type="utpublica" class="form-control" name="utpublica"/>
+              <input type="checkbox" class="form-control" name="utpublica"/>
           </div>
           <button type="submit" class="btn btn-block btn-primary">Envia</button>
       </form>
